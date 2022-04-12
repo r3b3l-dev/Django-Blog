@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from polls import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -22,3 +23,9 @@ urlpatterns = [
     path('', include('blog.urls'), name='blog_urls'),
     path('accounts/', include('allauth.urls')),
 ]
+
+
+# Configure Admin Titles
+admin.site.site_header = "CodeStar Administration Page"
+admin.site.site_title = "CodeStar | Admin"
+admin.site.index_title = "Welcome to the Admin Area"
